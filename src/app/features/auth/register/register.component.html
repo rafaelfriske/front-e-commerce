@@ -1,1 +1,247 @@
-<p>register works!</p>
+<app-header></app-header>
+
+<div class="register-container">
+    <div class="register-content">
+        <h1>Criar uma conta</h1>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-layout">
+                <div class="form-main">
+                    <!-- Personal Data Section -->
+                    <section class="form-section">
+                        <h2>Dados</h2>
+
+                        <div class="form-group">
+                            <label for="fullName">Nome completo</label>
+                            <input type="text" id="fullName" formControlName="fullName" placeholder="Exemplo preenchido"
+                                [ngClass]="{'invalid': registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched}">
+                            <div class="error-message"
+                                *ngIf="registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched">
+                                Nome completo é obrigatório
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <div class="input-with-icon">
+                                    <i class="input-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </i>
+                                    <input type="email" id="email" formControlName="email" placeholder="mail@email.com"
+                                        [ngClass]="{'invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}">
+                                </div>
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                                    <span *ngIf="registerForm.get('email')?.errors?.['required']">Email é
+                                        obrigatório</span>
+                                    <span *ngIf="registerForm.get('email')?.errors?.['email']">Email inválido</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="birthDate">Data de nascimento</label>
+                                <input type="text" id="birthDate" formControlName="birthDate" placeholder="00/00/00"
+                                    [ngClass]="{'invalid': registerForm.get('birthDate')?.invalid && registerForm.get('birthDate')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('birthDate')?.invalid && registerForm.get('birthDate')?.touched">
+                                    Data de nascimento é obrigatória
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="text" id="phone" formControlName="phone" placeholder="(00)00000-0000"
+                                    [ngClass]="{'invalid': registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched">
+                                    Telefone é obrigatório
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpfCnpj">CPF/CNPJ</label>
+                            <input type="text" id="cpfCnpj" formControlName="cpfCnpj" placeholder="00000000-00"
+                                [ngClass]="{'invalid': registerForm.get('cpfCnpj')?.invalid && registerForm.get('cpfCnpj')?.touched}">
+                            <div class="error-message"
+                                *ngIf="registerForm.get('cpfCnpj')?.invalid && registerForm.get('cpfCnpj')?.touched">
+                                CPF/CNPJ é obrigatório
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" formControlName="agreeTerms">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label">
+                                    Declaro que concordo e aceito os <a href="#">Termos de uso</a> e <a
+                                        href="#">Política de privacidade</a>.
+                                </span>
+                            </label>
+                            <div class="error-message"
+                                *ngIf="registerForm.get('agreeTerms')?.invalid && registerForm.get('agreeTerms')?.touched">
+                                Você deve aceitar os termos para continuar
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Address Section -->
+                    <section class="form-section">
+                        <h2>Endereço</h2>
+
+                        <div class="form-group">
+                            <label for="address">Endereço</label>
+                            <input type="text" id="address" formControlName="address" placeholder="Exemplo preenchido"
+                                [ngClass]="{'invalid': registerForm.get('address')?.invalid && registerForm.get('address')?.touched}">
+                            <div class="error-message"
+                                *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched">
+                                Endereço é obrigatório
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="number">Número</label>
+                                <input type="text" id="number" formControlName="number" placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('number')?.invalid && registerForm.get('number')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('number')?.invalid && registerForm.get('number')?.touched">
+                                    Número é obrigatório
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="neighborhood">Bairro</label>
+                                <input type="text" id="neighborhood" formControlName="neighborhood"
+                                    placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('neighborhood')?.invalid && registerForm.get('neighborhood')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('neighborhood')?.invalid && registerForm.get('neighborhood')?.touched">
+                                    Bairro é obrigatório
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postalCode">CEP</label>
+                            <input type="text" id="postalCode" formControlName="postalCode"
+                                placeholder="Exemplo preenchido"
+                                [ngClass]="{'invalid': registerForm.get('postalCode')?.invalid && registerForm.get('postalCode')?.touched}">
+                            <div class="error-message"
+                                *ngIf="registerForm.get('postalCode')?.invalid && registerForm.get('postalCode')?.touched">
+                                CEP é obrigatório
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Cidade</label>
+                                <input type="text" id="city" formControlName="city" placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('city')?.invalid && registerForm.get('city')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('city')?.invalid && registerForm.get('city')?.touched">
+                                    Cidade é obrigatória
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">Estado</label>
+                                <input type="text" id="state" formControlName="state" placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('state')?.invalid && registerForm.get('state')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('state')?.invalid && registerForm.get('state')?.touched">
+                                    Estado é obrigatório
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Password Section -->
+                    <section class="form-section">
+                        <h2>Senha</h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Nova senha</label>
+                                <input [type]="hidePassword ? 'password' : 'text'" id="password"
+                                    formControlName="password" placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                                    <span *ngIf="registerForm.get('password')?.errors?.['required']">Senha é
+                                        obrigatória</span>
+                                    <span *ngIf="registerForm.get('password')?.errors?.['minlength']">Senha deve ter no
+                                        mínimo 8 caracteres</span>
+                                    <span *ngIf="registerForm.get('password')?.errors?.['pattern']">Senha deve conter
+                                        letras maiúsculas, minúsculas e números</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirmar senha</label>
+                                <input [type]="hideConfirmPassword ? 'password' : 'text'" id="confirmPassword"
+                                    formControlName="confirmPassword" placeholder="Exemplo preenchido"
+                                    [ngClass]="{'invalid': registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched}">
+                                <div class="error-message"
+                                    *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+                                    <span *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirmação
+                                        de senha é obrigatória</span>
+                                    <span *ngIf="registerForm.get('confirmPassword')?.errors?.['mismatch']">Senhas não
+                                        conferem</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="password-requirements">
+                            <p><span class="bullet"></span> A senha deve ter no mínimo 8 caracteres;</p>
+                            <p><span class="bullet"></span> Use números e letras;</p>
+                            <p><span class="bullet"></span> Utilize pelo menos uma letra maiúscula.</p>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">CRIAR CONTA</button>
+                    </div>
+                </div>
+
+                <!-- Profile Photo Section -->
+                <div class="profile-photo-section">
+                    <div class="profile-photo-container">
+                        <div class="profile-photo"
+                            [style.background-image]="imagePreview ? 'url(' + imagePreview + ')' : 'none'">
+                            <svg *ngIf="!imagePreview" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <label for="photo-upload" class="photo-upload-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                </path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </label>
+                        <input type="file" id="photo-upload" accept="image/*" (change)="onFileSelected($event)"
+                            style="display: none;">
+                    </div>
+                    <p class="photo-upload-text">Adicione uma foto</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

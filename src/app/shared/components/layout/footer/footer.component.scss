@@ -1,0 +1,142 @@
+.footer {
+    background-color: #1e88e5; /* Blue background color matching the image */
+    color: white;
+    padding: 40px 0;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+  
+  /* Logo and contact section */
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #757575;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .contact-button {
+    display: block;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 15px 0;
+    width: 180px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .contact-info {
+    margin-top: 15px;
+  }
+  
+  .phone {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .hours {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  /* Navigation links */
+  .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Social media icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: white;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    opacity: 0.8;
+  }
+  
+  /* App download buttons */
+  .app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .app-button {
+    display: block;
+    width: 140px;
+    height: 42px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .app-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-column {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  

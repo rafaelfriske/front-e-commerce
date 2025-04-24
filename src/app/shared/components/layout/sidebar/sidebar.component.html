@@ -1,1 +1,26 @@
-<p>sidebar works!</p>
+<nav class="sidemenu">
+  <a [routerLink]="['/dashboard']" routerLinkActive="active-menu">
+    <span class="material-symbols-outlined">
+      desktop_windows
+    </span>
+    Dashboard
+  </a>
+  <a [routerLink]="['/tags']" routerLinkActive="active-menu">
+    <span class="material-symbols-outlined">
+      receipt_long
+      </span>
+      Etiquetas
+    </a>
+  <a [routerLink]="['/tracking']" routerLinkActive="active-menu">
+    <span class="material-symbols-outlined">
+      local_shipping
+      </span>
+      Rastreios
+    </a>
+  <a [routerLink]="['/profile']" routerLinkActive="active-menu">
+    <span class="material-symbols-outlined">
+      person
+      </span>
+      Meu Perfil
+    </a>
+</nav>

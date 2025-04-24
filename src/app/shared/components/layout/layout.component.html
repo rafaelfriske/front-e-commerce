@@ -1,14 +1,9 @@
 <div class="layout">
-    <app-header></app-header>
-    <div class="content-wrapper">
-      <nav class="sidemenu">
-        <h2>Menu</h2>
-        <a [routerLink]="['/dashboard']">Dashboard</a>
-        <a [routerLink]="['/profile']">Profile</a>
-    
-      </nav>
-      <main class="main-content">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
+  <app-header></app-header>
+  <div class="content-wrapper">
+    <app-sidebar></app-sidebar>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>

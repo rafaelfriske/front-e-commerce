@@ -1,1 +1,83 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <div class="dashboard-content">
+      <div class="dashboard-header">
+        <div class="title-section">
+          <div class="breadcrumb">DASHBOARD</div>
+          <h1>Dashboard</h1>
+        </div>
+        
+        <div class="balance-card">
+          <div class="balance-info">
+            <div class="balance-label">Saldo em conta</div>
+            <div class="balance-amount">R$ {{accountBalance}}</div>
+          </div>
+          <button class="add-funds-button" (click)="addFunds()">Adicionar</button>
+        </div>
+      </div>
+      
+      <div class="shipping-form">
+        <!-- Origin Section -->
+        <div class="form-card">
+          <h2>Origem</h2>
+          <div class="form-group">
+            <label for="origin-cep">CEP</label>
+            <input type="text" id="origin-cep" placeholder="00000000" class="form-control">
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group half">
+              <label for="package-format">Formato do pacote</label>
+              <div class="select-wrapper">
+                <select id="package-format" class="form-control">
+                  <option *ngFor="let format of packageFormats" [value]="format.value">{{format.label}}</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
+            </div>
+            
+            <div class="form-group half">
+              <label for="weight">Peso</label>
+              <div class="select-wrapper">
+                <select id="weight" class="form-control">
+                  <option *ngFor="let option of weightOptions" [value]="option.value">{{option.label}}</option>
+                </select>
+                <div class="select-arrow"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group third">
+              <label for="height">Altura</label>
+              <input type="text" id="height" placeholder="000" class="form-control">
+            </div>
+            
+            <div class="form-group third">
+              <label for="width">Largura</label>
+              <input type="text" id="width" placeholder="000" class="form-control">
+            </div>
+            
+            <div class="form-group third">
+              <label for="length">Comprimento</label>
+              <input type="text" id="length" placeholder="Exemplo Preenchido" class="form-control example-filled">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Destination Section -->
+        <div class="form-card">
+          <h2>Destino</h2>
+          <div class="form-group cep-search">
+            <label for="destination-cep">CEP</label>
+            <input type="text" id="destination-cep" placeholder="00000000" class="form-control">
+            <button class="search-cep-button" (click)="searchCEP()">Pesquisar CEP</button>
+          </div>
+        </div>
+        
+        <!-- Calculate Button -->
+        <div class="button-container">
+          <button class="calculate-button" (click)="calculateWithDiscount()">CALCULAR COM DESCONTO</button>
+        </div>
+      </div>
+    </div>
+  </div>
