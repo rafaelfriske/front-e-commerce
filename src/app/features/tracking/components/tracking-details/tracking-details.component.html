@@ -1,0 +1,143 @@
+<div class="tracking-details-container">
+    <div class="tracking-details-content">
+        <!-- Header -->
+        <div class="tracking-details-header">
+            <div class="breadcrumb">ETIQUETAS</div>
+            <h1>Detalhes do rastreio</h1>
+        </div>
+
+        <div class="tracking-details-card">
+            <!-- Order Data Section -->
+            <div class="details-section">
+                <h2>Dados do pedido</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Código</div>
+                        <div class="info-value">{{ trackingDetails.order.code }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Data</div>
+                        <div class="info-value">{{ trackingDetails.order.date }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracking Status Section -->
+            <div class="tracking-status-section">
+                <div class="tracking-status-container">
+                    <div class="tracking-step active">
+                        <div class="tracking-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="tracking-label">Aguardando Confirmação</div>
+                    </div>
+
+                    <div class="tracking-line"></div>
+
+                    <div class="tracking-step">
+                        <div class="tracking-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="tracking-label">Entregue</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destination Section -->
+            <div class="details-section">
+                <h2>Destino</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Nome</div>
+                        <div class="info-value">{{ trackingDetails.destination.name }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">CPF</div>
+                        <div class="info-value">{{ trackingDetails.destination.cpf }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Telefone</div>
+                        <div class="info-value">{{ trackingDetails.destination.phone }}</div>
+                    </div>
+                </div>
+
+                <div class="info-group full-width">
+                    <div class="info-label">Endereço</div>
+                    <div class="info-value">{{ trackingDetails.destination.address }}</div>
+                </div>
+            </div>
+
+            <!-- Package Data Section -->
+            <div class="details-section">
+                <h2>Dados do pacote</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Formato</div>
+                        <div class="info-value">{{ trackingDetails.package.format }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Peso</div>
+                        <div class="info-value">{{ trackingDetails.package.weight }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Altura</div>
+                        <div class="info-value">{{ trackingDetails.package.height }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Largura</div>
+                        <div class="info-value">{{ trackingDetails.package.width }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Comprimento</div>
+                        <div class="info-value">{{ trackingDetails.package.length }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Valor</div>
+                        <div class="info-value">{{ trackingDetails.package.value }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracking Code Section -->
+            <div class="details-section">
+                <h2>Código de rastreio</h2>
+
+                <div class="tracking-code-container">
+                    <div class="tracking-code">{{ trackingDetails.trackingCode }}</div>
+                    <button class="copy-button" (click)="copyTrackingCode()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

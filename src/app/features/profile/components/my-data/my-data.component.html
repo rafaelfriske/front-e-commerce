@@ -1,0 +1,101 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="preventClose($event)">
+      <div class="modal-content">
+        <h2 class="modal-title">Meus dados</h2>
+        
+        <form [formGroup]="userDataForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="companyName">Razão Social</label>
+              <input 
+                type="text" 
+                id="companyName" 
+                formControlName="companyName" 
+                placeholder="Exemplo preenchido"
+                [ngClass]="{'invalid': userDataForm.get('companyName')?.invalid && userDataForm.get('companyName')?.touched}"
+              >
+              <div class="error-message" *ngIf="userDataForm.get('companyName')?.invalid && userDataForm.get('companyName')?.touched">
+                Razão Social é obrigatória
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="cnpj">CNPJ</label>
+              <input 
+                type="text" 
+                id="cnpj" 
+                formControlName="cnpj" 
+                placeholder="Exemplo preenchido"
+                (input)="formatCNPJ($event)"
+                [ngClass]="{'invalid': userDataForm.get('cnpj')?.invalid && userDataForm.get('cnpj')?.touched}"
+              >
+              <div class="error-message" *ngIf="userDataForm.get('cnpj')?.invalid && userDataForm.get('cnpj')?.touched">
+                CNPJ inválido
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <div class="input-with-icon">
+                <i class="input-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </i>
+                <input 
+                  type="email" 
+                  id="email" 
+                  formControlName="email" 
+                  placeholder="mail@email.com"
+                  [ngClass]="{'invalid': userDataForm.get('email')?.invalid && userDataForm.get('email')?.touched}"
+                >
+              </div>
+              <div class="error-message" *ngIf="userDataForm.get('email')?.invalid && userDataForm.get('email')?.touched">
+                <span *ngIf="userDataForm.get('email')?.errors?.['required']">Email é obrigatório</span>
+                <span *ngIf="userDataForm.get('email')?.errors?.['email']">Email inválido</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input 
+                type="text" 
+                id="phone" 
+                formControlName="phone" 
+                placeholder="(00)0000-0000"
+                (input)="formatPhone($event)"
+                [ngClass]="{'invalid': userDataForm.get('phone')?.invalid && userDataForm.get('phone')?.touched}"
+              >
+              <div class="error-message" *ngIf="userDataForm.get('phone')?.invalid && userDataForm.get('phone')?.touched">
+                Telefone inválido
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="responsibleName">Nome do responsável</label>
+            <input 
+              type="text" 
+              id="responsibleName" 
+              formControlName="responsibleName" 
+              placeholder="Exemplo preenchido"
+              [ngClass]="{'invalid': userDataForm.get('responsibleName')?.invalid && userDataForm.get('responsibleName')?.touched}"
+            >
+            <div class="error-message" *ngIf="userDataForm.get('responsibleName')?.invalid && userDataForm.get('responsibleName')?.touched">
+              Nome do responsável é obrigatório
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="cancel-button" (click)="closeModal()">CANCELAR</button>
+            <button type="button" class="save-button" (click)="saveData()">SALVAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

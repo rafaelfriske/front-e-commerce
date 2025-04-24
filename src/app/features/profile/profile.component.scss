@@ -1,11 +1,11 @@
 .profile-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     min-height: 100vh;
   }
   
   .profile-content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -37,9 +37,9 @@
   
   .user-profile {
     display: flex;
-    flex-direction: column;
+    gap: 1em;
     align-items: center;
-    margin-bottom: 30px;
+
   }
   
   .avatar-container {
@@ -83,7 +83,7 @@
   
   .username {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     color: #333;
     margin: 0;
   }

@@ -1,0 +1,117 @@
+<div class="tag-details-container">
+    <div class="tag-details-content">
+        <!-- Header -->
+        <div class="tag-details-header">
+            <div class="breadcrumb">ETIQUETAS</div>
+            <h1>Detalhes etiquetas</h1>
+        </div>
+
+        <div class="tag-details-card">
+            <!-- Origin Section -->
+            <div class="details-section">
+                <h2>Origem</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Nome</div>
+                        <div class="info-value">{{ tagDetails.origin.name }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">CPF</div>
+                        <div class="info-value">{{ tagDetails.origin.cpf }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Telefone</div>
+                        <div class="info-value">{{ tagDetails.origin.phone }}</div>
+                    </div>
+                </div>
+
+                <div class="info-group full-width">
+                    <div class="info-label">Endereço</div>
+                    <div class="info-value">{{ tagDetails.origin.address }}</div>
+                </div>
+            </div>
+
+            <!-- Destination Section -->
+            <div class="details-section">
+                <h2>Destino</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Nome</div>
+                        <div class="info-value">{{ tagDetails.destination.name }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">CPF</div>
+                        <div class="info-value">{{ tagDetails.destination.cpf }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Telefone</div>
+                        <div class="info-value">{{ tagDetails.destination.phone }}</div>
+                    </div>
+                </div>
+
+                <div class="info-group full-width">
+                    <div class="info-label">Endereço</div>
+                    <div class="info-value">{{ tagDetails.destination.address }}</div>
+                </div>
+            </div>
+
+            <!-- Package Data Section -->
+            <div class="details-section">
+                <h2>Dados do pacote</h2>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <div class="info-label">Formato</div>
+                        <div class="info-value">{{ tagDetails.package.format }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Peso</div>
+                        <div class="info-value">{{ tagDetails.package.weight }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Altura</div>
+                        <div class="info-value">{{ tagDetails.package.height }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Largura</div>
+                        <div class="info-value">{{ tagDetails.package.width }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Comprimento</div>
+                        <div class="info-value">{{ tagDetails.package.length }}</div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="info-label">Valor</div>
+                        <div class="info-value">{{ tagDetails.package.value }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="details-section">
+                <h2>Resumo</h2>
+
+                <div class="info-group">
+                    <div class="info-label">Valor do frete</div>
+                    <div class="info-value">{{ tagDetails.shipping.cost }}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Print Button -->
+        <div class="actions-container">
+            <button class="print-button" (click)="printTag()">IMPRIMIR</button>
+        </div>
+    </div>
+</div>

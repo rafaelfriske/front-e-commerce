@@ -1,19 +1,16 @@
-.dashboard-container {
+.tag-create-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     min-height: 100vh;
   }
   
-  .dashboard-content {
-    max-width: 1200px;
+  .tag-create-content {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
   }
   
-  .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  .tag-create-header {
     margin-bottom: 20px;
   }
   
@@ -32,58 +29,18 @@
   }
   
   h2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: #333;
     margin: 0 0 15px 0;
   }
   
-  .balance-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
+  .form-section {
+    background-color: white;
     border-radius: 4px;
-    padding: 15px 20px;
-    min-width: 250px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .balance-label {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
-  }
-  
-  .balance-amount {
-    font-size: 22px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .add-funds-button {
-    background: none;
-    border: none;
-    color: #2196f3;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 5px;
-  }
-  
-  .add-funds-button:hover {
-    text-decoration: underline;
-  }
-  
-  .form-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
   }
   
   .form-row {
@@ -92,12 +49,12 @@
     margin-bottom: 15px;
   }
   
-  .half {
+  .form-row .form-group {
     flex: 1;
   }
   
-  .third {
-    flex: 1;
+  .form-group {
+    margin-bottom: 15px;
   }
   
   label {
@@ -107,7 +64,8 @@
     margin-bottom: 8px;
   }
   
-  .form-control {
+  input[type="text"],
+  select {
     width: 100%;
     padding: 10px 12px;
     font-size: 14px;
@@ -116,8 +74,21 @@
     background-color: #f9f9f9;
   }
   
-  .example-filled {
-    color: #666;
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+  }
+  
+  input.invalid {
+    border-color: #f44336;
+  }
+  
+  .error-message {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 4px;
   }
   
   .select-wrapper {
@@ -142,65 +113,95 @@
     pointer-events: none;
   }
   
-  .cep-search {
+  /* Toggle Switch Styles */
+  .toggle-group {
+    margin-bottom: 15px;
+  }
+  
+  .toggle-container {
     display: flex;
-    align-items: flex-end;
-    gap: 10px;
-  }
-  
-  .cep-search input {
-    flex: 1;
-  }
-  
-  .search-cep-button {
-    background: none;
-    border: none;
-    color: #2196f3;
-    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    white-space: nowrap;
-    padding: 10px 0;
   }
   
-  .search-cep-button:hover {
-    text-decoration: underline;
+  .toggle-label {
+    font-size: 14px;
+    color: #333;
   }
   
-  .button-container {
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .toggle-slider {
+    background-color: #2196f3;
+  }
+  
+  input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+  }
+  
+  .form-actions {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
   }
   
-  .calculate-button {
+  .submit-button {
+    padding: 12px 30px;
     background-color: #2196f3;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 12px 24px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-transform: uppercase;
   }
   
-  .calculate-button:hover {
+  .submit-button:hover {
     background-color: #1976d2;
   }
   
   @media (max-width: 768px) {
-    .dashboard-header {
-      flex-direction: column;
-    }
-  
-    .balance-card {
-      width: 100%;
-      margin-top: 15px;
-    }
-  
     .form-row {
       flex-direction: column;
-      gap: 15px;
+      gap: 0;
     }
   }
   

@@ -1,0 +1,49 @@
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-container" (click)="preventClose($event)">
+      <div class="modal-header">
+        <h2>Adicionar saldo</h2>
+        <button class="close-button" (click)="closeModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="modal-content">
+        <form [formGroup]="balanceForm">
+          <div class="form-group">
+            <label for="amount">Valor</label>
+            <div class="input-container">
+              <span class="currency-symbol">R$</span>
+              <input 
+                type="text" 
+                id="amount" 
+                formControlName="amount" 
+                (input)="formatCurrency($event)"
+                class="amount-input"
+              >
+            </div>
+          </div>
+          
+          <div class="payment-methods">
+            <button 
+              type="button" 
+              class="payment-button pix-button" 
+              (click)="processPayment('pix')"
+            >
+              PIX
+            </button>
+            <button 
+              type="button" 
+              class="payment-button card-button" 
+              (click)="processPayment('card')"
+            >
+              CARTÃO
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

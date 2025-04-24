@@ -81,3 +81,9 @@
       </div>
     </div>
   </div>
+
+  <app-add-cash 
+  *ngIf="showAddBalanceModal"
+  (close)="closeAddBalanceModal()"
+  (addBalance)="handleAddBalance($event)"
+></app-add-cash>

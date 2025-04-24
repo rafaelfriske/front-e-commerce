@@ -1,0 +1,199 @@
+.tracking-details-container {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .tracking-details-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .tracking-details-header {
+    margin-bottom: 20px;
+  }
+  
+  .breadcrumb {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  .tracking-details-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .details-section {
+    margin-bottom: 30px;
+  }
+  
+  .details-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    margin: 0 0 15px 0;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-group {
+    margin-bottom: 15px;
+  }
+  
+  .info-group.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  .info-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .info-value {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  /* Tracking Status Section */
+  .tracking-status-section {
+    margin-bottom: 30px;
+    padding: 20px 0;
+  }
+  
+  .tracking-status-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .tracking-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .tracking-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #999;
+  }
+  
+  .tracking-step.active .tracking-icon {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .tracking-label {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    max-width: 120px;
+  }
+  
+  .tracking-step.active .tracking-label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .tracking-line {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 1;
+  }
+  
+  /* Tracking Code Section */
+  .tracking-code-container {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px 15px;
+  }
+  
+  .tracking-code {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+    font-family: monospace;
+  }
+  
+  .copy-button {
+    background: none;
+    border: none;
+    color: #2196f3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .copy-button:hover {
+    background-color: rgba(33, 150, 243, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .tracking-details-card {
+      padding: 20px;
+    }
+  
+    .tracking-status-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .tracking-line {
+      top: 0;
+      bottom: 0;
+      left: 25px;
+      right: auto;
+      width: 2px;
+      height: auto;
+    }
+  }
+  

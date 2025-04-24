@@ -1,0 +1,44 @@
+<div class="help-center-container">
+    <div class="help-center-content">
+        <!-- Header -->
+        <div class="help-center-header">
+            <div class="breadcrumb">PERFIL</div>
+            <h1>Central de ajuda</h1>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-container">
+            <div class="faq-item" *ngFor="let item of faqItems; let i = index">
+                <div class="faq-question" (click)="toggleFaq(i)">
+                    <span>{{ item.question }}</span>
+                    <button class="toggle-button">
+                        <svg *ngIf="!item.isOpen" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <svg *ngIf="item.isOpen" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="faq-answer" [class.open]="item.isOpen">
+                    <p>{{ item.answer }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <button class="contact-button" (click)="goToContact()">
+                NÃO ENCONTROU A SUA PERGUNTA?
+            </button>
+            <p class="contact-text">
+                Não encontrou a sua pergunta vai para <span class="contact-link" (click)="goToContact()">contato</span>
+            </p>
+        </div>
+    </div>
+</div>

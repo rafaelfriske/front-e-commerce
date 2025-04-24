@@ -1,0 +1,224 @@
+<div class="tag-create-container">
+    <div class="tag-create-content">
+        <!-- Header -->
+        <div class="tag-create-header">
+            <div class="breadcrumb">ETIQUETAS</div>
+            <h1>Cadastrar etiquetas</h1>
+        </div>
+
+        <form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
+            <!-- Recipient Data Section -->
+            <div class="form-section">
+                <h2>Dados do destinatário</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="recipientName">Nome</label>
+                        <input type="text" id="recipientName" formControlName="recipientName"
+                            placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('recipientName')?.invalid && tagForm.get('recipientName')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('recipientName')?.invalid && tagForm.get('recipientName')?.touched">
+                            Nome é obrigatório
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipientCpf">CPF</label>
+                        <input type="text" id="recipientCpf" formControlName="recipientCpf" placeholder="00000000000"
+                            [ngClass]="{'invalid': tagForm.get('recipientCpf')?.invalid && tagForm.get('recipientCpf')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('recipientCpf')?.invalid && tagForm.get('recipientCpf')?.touched">
+                            CPF é obrigatório
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipientPhone">Telefone</label>
+                        <input type="text" id="recipientPhone" formControlName="recipientPhone" placeholder="00000000"
+                            [ngClass]="{'invalid': tagForm.get('recipientPhone')?.invalid && tagForm.get('recipientPhone')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('recipientPhone')?.invalid && tagForm.get('recipientPhone')?.touched">
+                            Telefone é obrigatório
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Origin Section -->
+            <div class="form-section">
+                <h2>Origem</h2>
+
+                <div class="form-group">
+                    <label for="originCep">CEP</label>
+                    <input type="text" id="originCep" formControlName="originCep" placeholder="0000000"
+                        [ngClass]="{'invalid': tagForm.get('originCep')?.invalid && tagForm.get('originCep')?.touched}">
+                    <div class="error-message"
+                        *ngIf="tagForm.get('originCep')?.invalid && tagForm.get('originCep')?.touched">
+                        CEP é obrigatório
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="packageFormat">Formato do pacote</label>
+                        <div class="select-wrapper">
+                            <select id="packageFormat" formControlName="packageFormat" class="form-control">
+                                <option *ngFor="let format of packageFormats" [value]="format.value">{{format.label}}
+                                </option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">Peso</label>
+                        <div class="select-wrapper">
+                            <select id="weight" formControlName="weight" class="form-control">
+                                <option *ngFor="let option of weightOptions" [value]="option.value">{{option.label}}
+                                </option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="height">Altura</label>
+                        <input type="text" id="height" formControlName="height" placeholder="000"
+                            [ngClass]="{'invalid': tagForm.get('height')?.invalid && tagForm.get('height')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('height')?.invalid && tagForm.get('height')?.touched">
+                            Altura é obrigatória
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="width">Largura</label>
+                        <input type="text" id="width" formControlName="width" placeholder="000"
+                            [ngClass]="{'invalid': tagForm.get('width')?.invalid && tagForm.get('width')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('width')?.invalid && tagForm.get('width')?.touched">
+                            Largura é obrigatória
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="length">Comprimento</label>
+                        <input type="text" id="length" formControlName="length" placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('length')?.invalid && tagForm.get('length')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('length')?.invalid && tagForm.get('length')?.touched">
+                            Comprimento é obrigatório
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destination Section -->
+            <div class="form-section">
+                <h2>Destino</h2>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="destinationCep">CEP</label>
+                        <input type="text" id="destinationCep" formControlName="destinationCep" placeholder="0000000"
+                            [ngClass]="{'invalid': tagForm.get('destinationCep')?.invalid && tagForm.get('destinationCep')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('destinationCep')?.invalid && tagForm.get('destinationCep')?.touched">
+                            CEP é obrigatório
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Endereço</label>
+                        <input type="text" id="address" formControlName="address" placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('address')?.invalid && tagForm.get('address')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('address')?.invalid && tagForm.get('address')?.touched">
+                            Endereço é obrigatório
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="neighborhood">Bairro</label>
+                        <input type="text" id="neighborhood" formControlName="neighborhood"
+                            placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('neighborhood')?.invalid && tagForm.get('neighborhood')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('neighborhood')?.invalid && tagForm.get('neighborhood')?.touched">
+                            Bairro é obrigatório
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Estado</label>
+                        <input type="text" id="state" formControlName="state" placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('state')?.invalid && tagForm.get('state')?.touched}">
+                        <div class="error-message"
+                            *ngIf="tagForm.get('state')?.invalid && tagForm.get('state')?.touched">
+                            Estado é obrigatório
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Cidade</label>
+                        <input type="text" id="city" formControlName="city" placeholder="Exemplo Preenchido"
+                            [ngClass]="{'invalid': tagForm.get('city')?.invalid && tagForm.get('city')?.touched}">
+                        <div class="error-message" *ngIf="tagForm.get('city')?.invalid && tagForm.get('city')?.touched">
+                            Cidade é obrigatória
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Options Section -->
+            <div class="form-section">
+                <h2>Seguro, aviso e mão própria</h2>
+
+                <div class="toggle-group">
+                    <label class="toggle-container">
+                        <span class="toggle-label">Mão própria</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" formControlName="inPersonDelivery">
+                            <span class="toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="toggle-group">
+                    <label class="toggle-container">
+                        <span class="toggle-label">Aviso de recebimento - AR</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" formControlName="deliveryConfirmation">
+                            <span class="toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="toggle-group">
+                    <label class="toggle-container">
+                        <span class="toggle-label">Declaração de valor - Seguro</span>
+                        <div class="toggle-switch">
+                            <input type="checkbox" formControlName="insurance">
+                            <span class="toggle-slider"></span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-group" *ngIf="tagForm.get('insurance')?.value">
+                    <label for="declaredValue">Valor do objeto enviado</label>
+                    <input type="text" id="declaredValue" formControlName="declaredValue" placeholder="R$ 00,00">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="submit-button">CONFIRMAR</button>
+            </div>
+        </form>
+    </div>
+</div>
