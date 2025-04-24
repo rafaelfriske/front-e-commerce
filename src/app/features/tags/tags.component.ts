@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tags',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule, RouterModule],
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.scss'
 })
@@ -15,6 +16,10 @@ export class TagsComponent {
   currentPage = 1
   itemsPerPage = 4
   totalPages = 1
+
+  constructor(private router: Router){
+
+  }
 
   ngOnInit(): void {
     // Mock data - in a real app, this would come from a service
@@ -71,7 +76,6 @@ export class TagsComponent {
   }
 
   createNewTag(): void {
-    // Implement create new tag functionality
-    console.log("Create new tag")
+    this.router.navigateByUrl("/tags/create")
   }
 }

@@ -1,7 +1,7 @@
 .dashboard-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ffffff;
-    min-height: 100vh;
+    height: auto;
   }
   
   .dashboard-content {
@@ -105,6 +105,10 @@
     font-size: 14px;
     color: #666;
     margin-bottom: 8px;
+  }
+
+  input{
+    box-sizing: border-box;
   }
   
   .form-control {
