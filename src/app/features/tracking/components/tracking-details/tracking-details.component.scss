@@ -1,11 +1,11 @@
 .tracking-details-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     height: auto;
   }
   
   .tracking-details-content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -32,12 +32,11 @@
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 30px;
     margin-bottom: 20px;
   }
   
   .details-section {
-    margin-bottom: 30px;
+    padding: 30px 30px 30px 30px;
   }
   
   .details-section:last-child {
@@ -80,8 +79,9 @@
   
   /* Tracking Status Section */
   .tracking-status-section {
-    margin-bottom: 30px;
+
     padding: 20px 0;
+    background-color: #f7f7f7;
   }
   
   .tracking-status-container {
@@ -89,14 +89,14 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    max-width: 500px;
-    margin: 0 auto;
+    width: 100%;
   }
   
   .tracking-step {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1em;
     z-index: 2;
   }
   
@@ -131,9 +131,9 @@
   
   .tracking-line {
     position: absolute;
-    top: 25px;
-    left: 50px;
-    right: 50px;
+    top: 40px;
+    left: 55px;
+    right: 55px;
     height: 2px;
     background-color: #e0e0e0;
     z-index: 1;

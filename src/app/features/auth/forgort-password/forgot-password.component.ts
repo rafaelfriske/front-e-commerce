@@ -39,7 +39,7 @@ export class ForgotPasswordComponent {
         this.isSubmitting = false
 
         // Navigate to a confirmation page or show a success message
-        this.router.navigate(["/reset-password-sent"])
+        this.router.navigate(["/reset-password"])
       }, 1500)
     } else {
       // Mark fields as touched to trigger validation messages

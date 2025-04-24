@@ -57,7 +57,7 @@
   
   .search-button {
     position: absolute;
-    right: -20px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -118,6 +118,7 @@
     border-radius: 4px;
     padding: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
   }
   
   .tag-icon {

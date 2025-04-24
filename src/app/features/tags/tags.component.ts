@@ -5,7 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tags',
-  imports: [CommonModule,FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.scss'
 })
@@ -17,7 +17,7 @@ export class TagsComponent {
   itemsPerPage = 4
   totalPages = 1
 
-  constructor(private router: Router){
+  constructor(private router: Router) {
 
   }
 
@@ -48,11 +48,11 @@ export class TagsComponent {
     // Filter tags based on search query
     const filtered = this.searchQuery
       ? this.tags.filter(
-          (tag) =>
-            tag.id.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-            tag.clientName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-            tag.cpf.includes(this.searchQuery),
-        )
+        (tag) =>
+          tag.id.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          tag.clientName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          tag.cpf.includes(this.searchQuery),
+      )
       : [...this.tags]
 
     // Calculate total pages
@@ -77,5 +77,9 @@ export class TagsComponent {
 
   createNewTag(): void {
     this.router.navigateByUrl("/tags/create")
+  }
+
+  tagsDetails() {
+    this.router.navigateByUrl("/tags/details")
   }
 }

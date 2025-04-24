@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tracking',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterModule],
   templateUrl: './tracking.component.html',
   styleUrl: './tracking.component.scss'
 })
@@ -15,6 +16,10 @@ export class TrackingComponent {
   currentPage = 1
   itemsPerPage = 4
   totalPages = 1
+
+  constructor(private router: Router){
+
+  }
 
   ngOnInit(): void {
     // Mock data - in a real app, this would come from a service
@@ -65,13 +70,8 @@ export class TrackingComponent {
     }
   }
 
-  openFilter(): void {
-    // Implement filter functionality
-    console.log("Open filter")
+  trakingDetails(){
+    this.router.navigateByUrl("/tracking/details")
   }
 
-  createNewTag(): void {
-    // Implement create new tag functionality
-    console.log("Create new tag")
-  }
 }
