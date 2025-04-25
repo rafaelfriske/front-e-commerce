@@ -13,6 +13,7 @@ import { TagsDetailsComponent } from './features/tags/components/tags-details/ta
 import { TrackingDetailsComponent } from './features/tracking/components/tracking-details/tracking-details.component';
 import { ForgotPasswordComponent } from './features/auth/forgort-password/forgot-password.component';
 import { ResetPasswordComponent } from './features/auth/forgort-password/components/reset-password/reset-password.component';
+import { PaymentFormsComponent } from './features/payment-forms/payment-forms.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'forgot-password', component: ForgotPasswordComponent },
     { path: 'reset-password', component: ResetPasswordComponent },
+    { path: 'payment-forms', component: PaymentFormsComponent },
     {
         path: '',
         component: LayoutComponent,
